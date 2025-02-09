@@ -1,0 +1,65 @@
+:root {
+    --primary: #ff00ff;
+    --secondary: #00ffff;
+    --background: #000000;
+    --text: #ffffff;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    border-bottom: 1px solid var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.nav-links a:visited {
+    color: var(--text);
+}
+
+.signup-btn {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text) !important;
+    font-weight: bold;
+}
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 4rem 2rem;
+}
+
+.card {
+    border: 1px solid var(--primary);
+    padding: 2rem;
+    margin: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+} 

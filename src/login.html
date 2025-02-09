@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In - CyberRunner Challenge</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/signup.css">
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
+    <script src="config/firebase.js"></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="logo">🦾 CYBER RUNNER</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="challenge.html">Challenge</a>
+            <a href="tutorials.html">Tutorials</a>
+            <a href="community.html">Community</a>
+            <a href="signup.html" class="signup-btn">2025 SIGN UP</a>
+        </div>
+    </nav>
+    <main>
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <a href="signup.html" class="tab-btn">Sign Up</a>
+                <a href="login.html" class="tab-btn active">Log In</a>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                    <div class="password-help">
+                        <a href="#" id="forgot-password">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <div id="login-error" class="error-message hidden"></div>
+
+                <button type="submit" class="submit-btn">Log In</button>
+                
+                <div class="auth-switch">
+                    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="js/auth.js"></script>
+</body>
+</html> 

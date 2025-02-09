@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - CyberRunner Challenge</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/signup.css">
+  <!-- Firebase scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
+  <script src="config/firebase.js"></script>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="logo">🦾 CYBER RUNNER</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="challenge.html">Challenge</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="community.html">Community</a>
+      <a href="signup.html" class="signup-btn">2025 SIGN UP</a>
+    </div>
+  </nav>
+  <main>
+    <div class="auth-container">
+      <div class="auth-tabs">
+        <a href="signup.html" class="tab-btn active">Sign Up</a>
+        <a href="login.html" class="tab-btn">Log In</a>
+      </div>
+
+      <!-- Sign Up Form (shown by default) -->
+      <form id="signup-form" class="auth-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+          <div class="password-requirements">
+            Must be at least 8 characters long with numbers and letters
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="organization">Organization</label>
+          <input type="text" id="organization">
+        </div>
+
+        <div class="form-group">
+          <label for="engineering-exp">Years of Engineering Experience</label>
+          <input type="number" id="engineering-exp" min="0" max="50">
+        </div>
+
+        <div class="form-group">
+          <label for="coding-exp">Years of Coding Experience</label>
+          <input type="number" id="coding-exp" min="0" max="50">
+        </div>
+
+        <div id="signup-error" class="error-message hidden"></div>
+
+        <button type="submit" class="submit-btn">Create Account</button>
+        
+        <div class="auth-switch">
+          <p>Already have an account? <a href="login.html">Log In</a></p>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="js/auth.js"></script>
+</body>
+</html>
