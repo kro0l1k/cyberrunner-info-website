@@ -2,21 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CyberRunner Frontend</title>
+    <title>{% block title %}CyberRunner{% endblock %}</title>
+    <!-- Common styles: main.css handles typography, colors, layout; background.css for background styles -->
     <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/background.css">
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="logo">🦾 CYBER RUNNER</div>
-        <div class="nav-links">
-            <a href="/index.html">Home</a>
-            <a href="/challenge.html">Challenge</a>
-            <a href="/tutorials.html">Tutorials</a>
-            <a href="/community.html">Community</a>
-            <a href="/accounts/signup/" class="signup-btn">2025 SIGN UP</a>
+    <!-- Full-screen canvas for the animated background -->
+    <canvas id="background-canvas"></canvas>
+    
+    <!-- Header Section -->
+    <header>
+        <nav class="main-nav">
+            <div class="logo">🦾 CYBER RUNNER</div>
+            <div class="nav-links">
+                <a href="/index.html">Home</a>
+                <a href="/challenge.html">Challenge</a>
+                <a href="/tutorials.html">Tutorials</a>
+                <a href="/community.html">Community</a>
+                <a href="/accounts/signup/" class="signup-btn">2025 SIGN UP</a>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content Area -->
+    <main>
+        {% block content %}
+        <!-- Page-specific content goes here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 CyberRunner. All rights reserved.</p>
+            <p>Follow us on <a href="#">Social Media</a></p>
         </div>
-    </nav>
-    <hr>
-    {% block content %}{% endblock %}
+    </footer>
+    
+    <!-- Background Animation Script -->
+    <script>
+    (function() {
+        const canvas = document.getElementById("background-canvas");
+        if (!canvas) {
+            console.error("Canvas element not found!");
+            return;
+        }
+        const ctx = canvas.getContext("2d");
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Fill the canvas with a bright color (red) to test
+        ctx.fillStyle = "red";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        console.log("Test background drawn.");
+    })();
+    </script>
 </body>
 </html> 
